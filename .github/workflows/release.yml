@@ -28,6 +28,7 @@ jobs:
       - name: Prepare release directory
         run: |
           mkdir launcher_release
+          mkdir -p launcher_release/assets
           echo '{"version": "${{ github.ref_name }}" }' > launcher_release/assets/version.json
           cp launcher.py launcher_release/
           cp launcher.jar launcher_release/
