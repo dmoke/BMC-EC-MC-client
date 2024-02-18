@@ -9,4 +9,4 @@ _internal
 simplebackups
 .physics_mod_cache
 .env
-.github
+#.github
