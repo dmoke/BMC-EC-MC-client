@@ -1,4 +1,4 @@
-# Engineering Club Minecraft Launcher (SteamPunk)
+# Engineering Club Minecraft Launcher (BMC)
 ## Prerequisites
 Ensure you have the following software installed on your system:
 - Java 17 or later
