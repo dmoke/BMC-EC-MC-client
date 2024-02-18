@@ -1,4 +1,4 @@
-# pyinstaller --onefile --noconsole launcher.py --uac-admin
+# pyinstaller --onefile --noconsole launcher.py --uac-admin -w
 import json
 import os
 import platform
