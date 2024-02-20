@@ -312,8 +312,7 @@ class MainWindow(QMainWindow):
         self.resize(300, 283)
         self.centralwidget = QWidget(self)
         self.logo = QLabel(self.centralwidget)
-        self.logo.setMaximumSize(QSize(550, 320))
-        self.logo.setText('')
+        self.logo.setMaximumSize(QSize(640, 360))
         self.logo.setPixmap(QPixmap('assets/bg.png'))
         self.logo.setScaledContents(True)
 
@@ -364,10 +363,12 @@ class MainWindow(QMainWindow):
         self.launcher_version_label.setText(f"Launcher Version: {fetch_current_version()}")
         version_checkbox_layout.addWidget(self.launcher_version_label, 0, Qt.AlignmentFlag.AlignLeft)
 
+        version_checkbox_layout.addWidget(self.ram_slider, 1)
+        version_checkbox_layout.addWidget(self.ram_label, 1)
         self.repo_link_label = QLabel()
         self.repo_link_label.setText('<a href="https://github.com/dmoke/BMC-EC-MC-client">GitHub</a>')
         self.repo_link_label.setOpenExternalLinks(True)
-        version_checkbox_layout.addWidget(self.repo_link_label, 1, Qt.AlignmentFlag.AlignRight)
+        version_checkbox_layout.addWidget(self.repo_link_label, 1)
 
         self.reinstall_forge_checkbox = QCheckBox("Reinstall Forge on launch")
         self.reinstall_forge_checkbox.setChecked(False)  # Set default value
@@ -384,8 +385,6 @@ class MainWindow(QMainWindow):
 
         self.update_ram_label()  # Update RAM label with default value
         # Add RAM slider and label to the layout
-        self.vertical_layout.addWidget(self.ram_slider, 1)
-        self.vertical_layout.addWidget(self.ram_label, 1)
 
         self.vertical_layout.addWidget(self.start_progress_label)
         self.vertical_layout.addWidget(self.start_progress)
@@ -401,7 +400,7 @@ class MainWindow(QMainWindow):
 
     def update_ram_label(self):
         ram_amount_gb = self.ram_slider.value()
-        self.ram_label.setText(f"Allocated RAM: {ram_amount_gb}G")
+        self.ram_label.setText(f"RAM: {ram_amount_gb}G")
 
     def state_update(self, value):
         self.start_button.setDisabled(value)
